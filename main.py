@@ -74,6 +74,7 @@ def main():
 		print("\n	     Main Menu		")
 
 		print("\n1. Matrix Addition")
+		print("2. Matrix Substraction")
 		print("0. Exit")
 		
 		choice = pyin.inputInt(prompt="\n_ : ",greaterThan=-1)
@@ -102,6 +103,32 @@ def main():
 					matrix2 = input_matrix(m1_row_count,m1_col_count)
 
 					output_matrix = add_matrix(matrix1,matrix2)
+					print("\nOutput Matrix\n")
+					display_matrix(output_matrix)
+
+			case 2:
+
+				print("\n\n----- Matrix Substraction -----")
+
+				print("\nFor Matrix 1 :-")
+				m1_row_count = pyin.inputInt(prompt="\nEnter No Of Rows : ",greaterThan=0)
+				m1_col_count = pyin.inputInt(prompt="\nEnter No Of Columns : ",greaterThan=0)
+
+				print("\nFor Matrix 2 :-")
+				m2_row_count = pyin.inputInt(prompt="\nEnter No Of Rows : ",greaterThan=0)
+				m2_col_count = pyin.inputInt(prompt="\nEnter No Of Columns : ",greaterThan=0)
+
+				if (m1_col_count+m1_row_count) != (m2_col_count+m2_row_count):
+					print("\nBoth Matrix's Orders Are Not Same , Substraction Is Not Possible")
+
+				else:
+
+					print("\nFor Matrix 1 :-")
+					matrix1 = input_matrix(m1_row_count,m1_col_count)
+					print("\nFor Matrix 2 :-")
+					matrix2 = input_matrix(m1_row_count,m1_col_count)
+
+					output_matrix = substract_matrix(matrix1,matrix2)
 					print("\nOutput Matrix\n")
 					display_matrix(output_matrix)
 
